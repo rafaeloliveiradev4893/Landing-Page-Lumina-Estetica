@@ -1,0 +1,15 @@
+.reveal {
+  opacity: 1;
+  transform: none;
+}
+
+.reveal[data-animate="true"] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal[data-animate="true"].visible {
+  opacity: 1;
+  transform: none;
+}

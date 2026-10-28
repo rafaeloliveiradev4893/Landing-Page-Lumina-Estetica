@@ -1,0 +1,132 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid color-mix(in srgb, var(--nude) 55%, transparent);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  min-height: var(--header-h);
+  gap: 1rem;
+}
+
+.logo {
+  margin-right: auto;
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+
+.desktopNav {
+  display: none;
+  gap: 1.5rem;
+}
+
+.desktopNav a {
+  text-decoration: none;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.desktopNav a:hover {
+  color: var(--text);
+}
+
+.cta {
+  display: none;
+}
+
+.menuButton {
+  width: 44px;
+  height: 44px;
+  border: 0;
+  background: transparent;
+  display: grid;
+  place-content: center;
+  gap: 5px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.bar,
+.barOpen {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.menuButton[aria-expanded="true"] .barOpen:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menuButton[aria-expanded="true"] .barOpen:nth-child(2) {
+  opacity: 0;
+}
+
+.menuButton[aria-expanded="true"] .barOpen:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.mobile,
+.mobileOpen {
+  background: var(--surface);
+  border-bottom: 1px solid var(--nude);
+}
+
+.mobile {
+  display: none;
+}
+
+.mobileOpen {
+  display: block;
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 1.25rem 1.25rem;
+  gap: 0.25rem;
+}
+
+.mobileNav a {
+  text-decoration: none;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  color: var(--text);
+}
+
+.mobileCta {
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+@media (min-width: 960px) {
+  .desktopNav {
+    display: flex;
+  }
+
+  .cta {
+    display: inline-flex;
+  }
+
+  .menuButton,
+  .mobile,
+  .mobileOpen {
+    display: none;
+  }
+}

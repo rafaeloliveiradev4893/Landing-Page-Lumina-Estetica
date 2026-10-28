@@ -1,0 +1,32 @@
+.wrap {
+  padding-block: clamp(2rem, 5vw, 3rem);
+}
+
+.box {
+  background: var(--text);
+  color: var(--bg);
+  border-radius: calc(var(--radius) + 4px);
+  padding: clamp(2rem, 5vw, 3.4rem);
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.title {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  color: var(--bg);
+  max-width: 18ch;
+  margin-inline: auto;
+}
+
+.text {
+  margin: 0.9rem auto 0;
+  max-width: 38rem;
+  color: color-mix(in srgb, var(--bg) 78%, var(--nude));
+}
+
+.button {
+  margin-top: 1.6rem;
+  min-width: min(100%, 22rem);
+  font-size: 1.05rem;
+  padding-inline: 1.6rem;
+}
